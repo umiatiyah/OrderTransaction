@@ -43,23 +43,7 @@ namespace TestCandidate.Controllers
                 .Include(o => o.Product)
                 .Where(x => x.OrderID == order.OrderID)
                 .ToListAsync();
-            foreach (var item in detail)
-            {
-                Order rd = new Order()
-                {
-                    OrderDetails = new OrderDetails()
-                    {
-                        Product = new Product()
-                        {
-                            ProductName = item.Product.ProductName
-                        },
-                        UnitPrice = item.Product.UnitPrice,
-                        Quantity = item.Product.UnitsOnOrder,
-                        Discount = item.Discount
-                    },
-                };
-                order.OrderDetails = rd.OrderDetails;
-            };
+            order.OrderDetails = detail;
             if (order == null)
             {
                 return NotFound();

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TestCandidate.Data;
 using TestCandidate.Models;
+using Dapper;
 
 namespace TestCandidate.Controllers
 {
@@ -62,13 +63,28 @@ namespace TestCandidate.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(orderDetails);
+                var product = await _context.Products.Where(x => x.ProductID == orderDetails.ProductID).FirstOrDefaultAsync();
+                var order = await _context.Orders.Where(x => x.OrderID == orderDetails.OrderID).FirstOrDefaultAsync();
+                using (var con = this._context.Connection)
+                {
+                    con.Query<OrderDetails>("INSERT INTO [dbo].[Order Details] ([OrderID],[ProductID],[UnitPrice],[Quantity],[Discount])"
+                        + "VALUES (@OrderID, @ProductID, @UnitPrice, @Quantity, @Discount)", 
+                        new
+                    {
+                            OrderID = order?.OrderID,
+                            ProductID = product?.ProductID,
+                            UnitPrice = product?.UnitPrice,
+                            Quantity = product?.UnitsOnOrder,
+                            Discount = orderDetails.Discount
+                    });
+                }
+//                _context.Add(orderDetails);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(OrdersController.Index));
             }
             ViewData["OrderID"] = new SelectList(_context.Orders, "OrderID", "OrderID", orderDetails.OrderID);
             ViewData["ProductID"] = new SelectList(_context.Products, "ProductID", "ProductID", orderDetails.ProductID);
-            return View(orderDetails);
+            return RedirectToAction(nameof(OrdersController.Index));
         }
 
         // GET: OrderDetails/Edit/5

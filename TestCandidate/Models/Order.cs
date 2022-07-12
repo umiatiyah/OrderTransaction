@@ -21,6 +21,6 @@ namespace TestCandidate.Models
         public string ShipPostalCode { get; set; }
         public string ShipCountry { get; set; }
         public Customer Customer { get; set; }
-        public OrderDetails OrderDetails { get; set; }
+        public List<OrderDetails> OrderDetails { get; set; }
     }
 }

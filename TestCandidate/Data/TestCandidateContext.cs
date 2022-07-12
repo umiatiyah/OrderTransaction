@@ -17,6 +17,7 @@ namespace TestCandidate.Data
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<OrderDetails> OrderDetails { get; set; }
+        public System.Data.IDbConnection Connection => Database.GetDbConnection();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
