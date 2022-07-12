@@ -16,7 +16,6 @@ namespace TestCandidate.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<RunningNumber> RunningNumbers { get; set; }
         public DbSet<OrderDetails> OrderDetails { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -26,10 +25,6 @@ namespace TestCandidate.Data
                 .ToTable("Orders");
             modelBuilder.Entity<Customer>().ToTable("Customers");
             modelBuilder.Entity<Product>().ToTable("Products");
-            modelBuilder.Entity<RunningNumber>(builder => {
-                builder.HasNoKey();
-                builder.ToTable("RunningNumber");
-            });
             modelBuilder.Entity<OrderDetails>(builder => {
                 builder.HasNoKey();
                 builder.ToTable("Order Details");
