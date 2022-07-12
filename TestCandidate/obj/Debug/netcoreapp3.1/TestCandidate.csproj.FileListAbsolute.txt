@@ -153,11 +153,6 @@ E:\mee\LearnDotnet\TestCandidate\TestCandidate\obj\Debug\netcoreapp3.1\Razor\Vie
 E:\mee\LearnDotnet\TestCandidate\TestCandidate\obj\Debug\netcoreapp3.1\Razor\Views\Orders\Details.cshtml.g.cs
 E:\mee\LearnDotnet\TestCandidate\TestCandidate\obj\Debug\netcoreapp3.1\Razor\Views\Orders\Edit.cshtml.g.cs
 E:\mee\LearnDotnet\TestCandidate\TestCandidate\obj\Debug\netcoreapp3.1\Razor\Views\Orders\Index.cshtml.g.cs
-E:\mee\LearnDotnet\TestCandidate\TestCandidate\obj\Debug\netcoreapp3.1\Razor\Views\RunningNumbers\Create.cshtml.g.cs
-E:\mee\LearnDotnet\TestCandidate\TestCandidate\obj\Debug\netcoreapp3.1\Razor\Views\RunningNumbers\Delete.cshtml.g.cs
-E:\mee\LearnDotnet\TestCandidate\TestCandidate\obj\Debug\netcoreapp3.1\Razor\Views\RunningNumbers\Details.cshtml.g.cs
-E:\mee\LearnDotnet\TestCandidate\TestCandidate\obj\Debug\netcoreapp3.1\Razor\Views\RunningNumbers\Edit.cshtml.g.cs
-E:\mee\LearnDotnet\TestCandidate\TestCandidate\obj\Debug\netcoreapp3.1\Razor\Views\RunningNumbers\Index.cshtml.g.cs
 E:\mee\LearnDotnet\TestCandidate\TestCandidate\obj\Debug\netcoreapp3.1\Razor\Views\Products\Create.cshtml.g.cs
 E:\mee\LearnDotnet\TestCandidate\TestCandidate\obj\Debug\netcoreapp3.1\Razor\Views\Products\Delete.cshtml.g.cs
 E:\mee\LearnDotnet\TestCandidate\TestCandidate\obj\Debug\netcoreapp3.1\Razor\Views\Products\Details.cshtml.g.cs
